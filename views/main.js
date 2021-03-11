@@ -5,9 +5,9 @@
     event.preventDefault();
 
     //Get fields and check validities
-    const name = document.getElementById('name').value;
-    if (name == '') {
-        name.reportValidity();
+    const firstName = document.getElementById('name').value;
+    if (firstName == '') {
+        firstName.reportValidity();
         return false;
     }
 
@@ -35,6 +35,10 @@
     
     const address = document.getElementById('address').value;
 
+    const profession =  document.getElementById('profession').value;
+
+    
+
 
     //start the button spinner
     document.getElementById("submitCreateUserForm").classList.add("is-loading");
@@ -46,18 +50,18 @@
             'Content-Type': 'application/json'
         },
         //credentials: 'same-origin',
-        body: JSON.stringify({ name,nin,email })
+        body: JSON.stringify({ firstName,lastName,nationality,profession })
     }
 
     //call fetch
-    fetch('/users', init)
+    fetch('/biodata', init)
         .then(response => response.json())
         .then(data => {
             //alert(JSON.stringify(data))
             //remove spinner class
             document.getElementById("submitCreateUserForm").classList.remove("is-loading");
             //set notification
-            document.getElementById("notificationMessage").innerHTML = 'User creation successful';
+            document.getElementById("notificationMessage").innerHTML = 'Citizen creation successful';
             //add notification color class sent
             document.getElementById("notification").classList.add("is-success");
             //remove is-hidden from notificationWrapper

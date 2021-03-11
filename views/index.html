@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My first Bulma website</title>
+    <title>Citizen Data</title>
     <link rel="stylesheet" href="main.css">
     <script src="./main.js"></script>
   </head>
@@ -12,7 +12,7 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="https://bulma.io">
-          <img src="img.jpeg" width="112" height="28">
+          <img src="9ja.png" width="112" height="28">
         </a>
     
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -29,11 +29,11 @@
           </a>
     
           <a class="navbar-item">
-            Documentation
+            Get NIN
           </a>
 
           <a class="navbar-item">
-            Pricing
+            Get BVN
           </a>
     
           <div class="navbar-item has-dropdown is-hoverable">
@@ -67,7 +67,7 @@
               <a class="button is-ghost">
                 <strong>Sign up</strong>
               </a>
-              <a class="button is-warning">
+              <a class="button is-success">
                 Log in
               </a>
             </div>
@@ -75,43 +75,50 @@
         </div>
       </div>
     </nav>
-    <form class="box" id="createUserForm" action="/users" method="POST">
+    <form class="box" id="createUserForm" action="/biodata" method="POST">
     <fieldset id="createUserFormFieldSet" class="container">
     <div class="whole-form">
+      <h1 class="notification-message">Enter Details</h1>
     <div class="field">
-      <label class="label">Name</label>
+      <label class="label">First Name</label>
       <div class="control">
-        <input class="input"id="name" name="name" type="text" placeholder="Text input" required>
+        <input class="input"id="firstName" name="firstName" type="text" placeholder="First Name" required>
       </div>
     </div>
-    
-    <div class="field">
-      <label class="label">NIN</label>
-      <div class="control has-icons-left has-icons-right">
-        <input class="input is-success" id='nin' text='nin' type="text" placeholder="Text input" required>
-        <span class="icon is-small is-left">
-          <i class="fas fa-user"></i>
-        </span>
-        <span class="icon is-small is-right">
-          <i class="fas fa-check"></i>
-        </span>
-      </div>
-      
-    </div>
-    
-    <div class="field">
-      <label class="label">Email</label>
-      <div class="control has-icons-left has-icons-right">
-        <input class="input is-danger" type="email" id='nin' name='nin' placeholder="Email input"  required>
-        <span class="icon is-small is-left">
-          <i class="fas fa-envelope"></i>
-        </span>
-        <span class="icon is-small is-right">
-          <i class="fas fa-exclamation-triangle"></i>
-        </span>
-      </div>
 
+    <div class="field">
+      <label class="label">Last Name</label>
+      <div class="control">
+        <input class="input"id="lastName" name="lastName" type="text" placeholder="Last Name" required>
+      </div>
     </div>
+
+    <div class="field">
+      <label class="label">Nationality</label>
+      <div class="control">
+      <div class="select">
+        
+        <select id='nationality' name='nationality' required>
+          <option>Nigerian</option>
+          <option>Foreign</option>
+        </select>
+
+      </div>
+    </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Profession</label>
+      <div class="control">
+        <input class="input"id="profession" name="profession" type="text" placeholder="Profession" required>
+      </div>
+    </div>
+    
+
+      
+    
+    
+
     
    
     <div class="field">
@@ -127,7 +134,7 @@
     
     <div class="field is-grouped">
       <div class="control">
-        <button class="button is-link" id='submitCreateUserFor' onclick="submitForm()">Submit</button>
+        <button class="button is-link" id='submitCreateUserForm' onclick="submitForm()">Submit</button>
       </div>
       <div class="control">
         <button class="button is-link is-light" type="reset">Cancel</button>

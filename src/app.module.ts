@@ -1,12 +1,13 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UserModule } from './user/user.module';
+import { BiodataModule } from './biodata/biodata.module';
 import { ConfigModule } from '@nestjs/config';
 import { DatabaseModule } from './app.database.module';
+import { LinkedIdentityModule } from './linkedIdentity/linkedIdentity.module';
 
 @Module({
-  imports: [ConfigModule.forRoot(), DatabaseModule],
+  imports: [BiodataModule, LinkedIdentityModule,ConfigModule.forRoot(), DatabaseModule],
   controllers: [AppController],
   providers: [AppService],
 })

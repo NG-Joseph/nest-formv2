@@ -1,7 +1,8 @@
 import {Module} from '@nestjs/common'
 import {TypeOrmModule} from '@nestjs/typeorm'
 import {ConfigModule, ConfigService} from '@nestjs/config'
-import {UserModule} from './user/user.module'
+import {BiodataModule} from './biodata/biodata.module'
+import { LinkedIdentityModule } from './linkedIdentity/linkedIdentity.module';
 
 
 
@@ -17,13 +18,12 @@ import {UserModule} from './user/user.module'
           port: configService.get('POSTGRES_PORT', 5432),
           username: configService.get('POSTGRES_USER', 'postgres'),
           password: configService.get('POSTGRES_PASSWORD', 'coolpolice1'),
-          database: configService.get('POSTGRES_DB', 'nest-form'),
+          database: configService.get('POSTGRES_DB', 'biodata-form'),
           entities: ['dist/**/*.entity{.ts,.js}'],
           synchronize: true,
           autoLoadEntities: true,
         }),
-      }),
-    UserModule  ],
+      }),  ],
   })
 
   export class DatabaseModule {}
